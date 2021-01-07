@@ -12,12 +12,14 @@ def cross_entropy_error(y, t):
 
 def softmax(x):
     if x.ndim == 2:
-        x = x - np.max(x, axis=1).reshape(len(x), 1)
-        print(x)
-        return (np.exp(x) / np.sum(np.exp(x), axis=1))
+        x = x - np.max(x, axis=1).reshape(x.shape[0], 1)
+        return np.exp(x) / np.sum(np.exp(x), axis=1).reshape(x.shape[0], 1)
     
     x = x - np.max(x)
     return np.exp(x) / np.sum(np.exp(x))
 
 def sigmoid(x):
     return 1 / ( 1 + np.exp(-x))
+
+def sigmoid_grad(x):
+    return (1.0 - sigmoid(x)) * sigmoid(x)
