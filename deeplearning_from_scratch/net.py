@@ -91,12 +91,3 @@ class TwoLayerNet:
         return grads
 
 
-
-'''x = np.random.rand(100, 784)
-net = TwoLayerNet(784, 100, 10)
-y = net.predict(x)
-t = np.random.rand(100, 10)
-
-grads = net.numerical_gradient(x, t)
-print(grads)
-'''
