@@ -25,10 +25,10 @@ class TwoLayerNet:
         
         self.params['W1'] = weight_init_std * \
                                 np.random.randn(input_size, hidden_state_size)
-        self.params['b1'] = np.zeros_like(hidden_state_size)
+        self.params['b1'] = np.zeros(hidden_state_size)
         self.params['W2'] = weight_init_std * \
                                 np.random.randn(hidden_state_size, output_size)
-        self.params['b2'] = np.zeros_like(output_size)
+        self.params['b2'] = np.zeros(output_size)
 
     def predict(self, x):
         W1, W2 = self.params['W1'], self.params['W2']
@@ -92,9 +92,11 @@ class TwoLayerNet:
 
 
 
-x = np.random.rand(100, 784)
+'''x = np.random.rand(100, 784)
 net = TwoLayerNet(784, 100, 10)
 y = net.predict(x)
 t = np.random.rand(100, 10)
-#grads = net.numerical_gradient(x, t)
-#print(grads)
+
+grads = net.numerical_gradient(x, t)
+print(grads)
+'''
