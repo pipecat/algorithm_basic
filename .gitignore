@@ -1,4 +1,6 @@
 .vscode/
+d2l_pytorch/
+d2l-zh/
 *.pkl
 *.gz
 __pycache__/
