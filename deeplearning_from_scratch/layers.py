@@ -1,6 +1,7 @@
 import sys, os
 sys.path.append(os.pardir)
 import numpy as np
+from deeplearning_from_scratch.functions import softmax, cross_entropy_error
 
 class AddLayer:
 
@@ -85,8 +86,28 @@ class Affine:
         return out
 
     def backward(self, dout):
-        self.dx = np.dot(dout, self.W.T)
+        dx = np.dot(dout, self.W.T)
         self.dW = np.dot(self.x.T, dout)
         self.db = np.sum(dout, axis=0)
+
+        return dx
+
+class SoftmaxWithLoss:
+    
+    def __init__(self):
+        self.loss = None
+        self.y = None
+        self.t = None
+
+    def forward(self, x, t):
+        self.t = t
+        self.y = softmax(x)
+        self.loss = cross_entropy_error(self.y, self.t)
+
+        return self.loss
+
+    def backward(self, dout=1):
+        batch_size = self.t.shape[0]
+        dx = (self.y - self.t) / batch_size
 
         return dx
