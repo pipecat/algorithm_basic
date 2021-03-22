@@ -1,7 +1,7 @@
-import sys, os
-sys.path.append(os.pardir)
+import sys
+sys.path.append('..')
 import numpy as np
-from deeplearning_from_scratch.net import TwoLayerNet
+from net import TwoLayerNet
 from dataset.mnist import load_mnist
 import matplotlib.pylab as plt
 

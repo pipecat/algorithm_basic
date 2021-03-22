@@ -4,3 +4,4 @@ d2l-zh/
 *.pkl
 *.gz
 __pycache__/
+*.pyc

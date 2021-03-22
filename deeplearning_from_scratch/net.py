@@ -1,9 +1,9 @@
 import sys, os
-sys.path.append(os.pardir)
+sys.path.append('..')
 import numpy as np
-from deeplearning_from_scratch.functions import *
-from deeplearning_from_scratch.gradient import *
-from deeplearning_from_scratch.layers import *
+from functions import *
+from gradient import *
+from layers import *
 from collections import OrderedDict
 
 class SimpleNet:

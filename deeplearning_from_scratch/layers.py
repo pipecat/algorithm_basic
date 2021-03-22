@@ -1,7 +1,7 @@
 import sys, os
 sys.path.append(os.pardir)
 import numpy as np
-from deeplearning_from_scratch.functions import softmax, cross_entropy_error
+from functions import softmax, cross_entropy_error
 
 class AddLayer:
 
